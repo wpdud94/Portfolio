@@ -1,0 +1,38 @@
+<!-- 
+Box Model
+w/h는 같은데 padding이나 border 큰 거 먹이면 사이즈가 달라진다
+w/h만 가지고 특정 영역의 사이즈를 규정할 수 없다
+
+border-box : w/h만으로 이루어지나 padding 때문에 글이 내려옴. 
+기본값 = content box;
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Box model</title>
+<style type="text/css">
+	div{
+		width: 300px;
+		height: 100px;
+		border: 1px solid red;
+	
+	}
+	.div1{
+			
+	}
+	.div2{
+		padding: 50px;
+		box-sizing: border-box;
+		/* box-sizing: content-box; */
+	}
+</style>
+</head>
+<body>
+<div class="div1">The Div is smaller (width 300px height 100px)</div>
+<br/>
+<div class="div2">The Div is bigger (width 300px height 100px)</div>
+</body>
+</html>

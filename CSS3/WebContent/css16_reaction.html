@@ -1,0 +1,43 @@
+<!-- 
+Meta 태그의 Viewport, Media 태그의 Reaction 속성
+디바이스 화면 크기별로 반응해 화면 출력하도록 하는 속성
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<style type="text/css">
+	@media screen and (max-width:767px){/* 모바일 */
+		html{
+			background: red;
+			color: white;
+			font: bold;
+		}
+	}
+	
+	@media screen and (min-width:768px) and (max-width:959px){/* 테블릿PC */
+		html{
+			background: green;
+			color: white;
+			font: bold;
+		}
+	}
+	
+	@media screen and (min-width:960px){/* 일반 PC 크기 */
+		html{
+			background: blue;
+			color: white;
+			font: bold;
+		}
+	}
+</style>
+</head>
+<body>
+<h1>Lorem Ipsum</h1>
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+</body>
+</html>

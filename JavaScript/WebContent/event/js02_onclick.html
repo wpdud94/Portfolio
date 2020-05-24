@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Onclick</title>
+<script type="text/javascript">
+	/* Onclick : 클릭 또는 엔터했을 때 html의 버튼과 자바스크립트의 함수를 연결시켜주는 속성. */
+	/* Onchange : 아이템이 변경할 때 연결시켜주는 속성. ex. 체크 추가로 하거나 취소하고 새로운 것 할 때*/
+	
+	function test1() {
+		document.write("연희 안녕??");
+		alert("연희 안녕?");
+	}
+
+	function test2(str, name){
+		var data = test3(name);
+		alert(str+", "+data);
+		document.write(str+", "+data);
+	}
+	
+	function test3(message){
+		return message + " 짱짱!!";
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="test1" onclick="test1()"> <!-- inline tag -->
+	<input type="button" value="test2" onclick="test2('우유빛깔','김연희')">
+</body>
+</html>

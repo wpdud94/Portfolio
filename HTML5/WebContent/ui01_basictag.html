@@ -1,0 +1,105 @@
+<!-- 
+1. html 파일을 작성... 저장... 
+2. 작성한 파일을 Tomcat_Home < webapps < context Root(HTML5) < ui_basictag.html 형태로 배포
+3. 서버 가동
+4. 화면에서 서버에 페이지 요청, http 프로토콜을 사용하여
+	http://127.0.0.1:8888/HTML5/ui01_basictag.html
+5. 요청한 결과로 Body 태크 안에 있는 내용을 화면으로 응답하ㅏㅁ
+::
+2~5번까지의 모든 일을 이클립스가 대신 서비스함
+그래서 우리는 이클립스를 IDE 툴이라고 함
+	-->
+<!-- Body만 건듦 -->
+<!-- 
+webapps에 context path 없음
+비활성화했기 때문
+서버 가동 전 서버를 더블클릭하여 use tomcat installation 클릭
+이때 deploy 경로를 webapps로 잡기. 동적이든 정적이든.
+ -->
+
+<!-- 구조 
+
+html
+|
+head
+	|
+	meta : 해시태그 같음. 검색엔진이 이걸로 검색
+	title : 검색 우선 시 
+body
+-->
+
+<!-- 
+검색엔진 최적화
+우리의 컨텐츠가 사용자에게 검색되었을 때 상위에 노출될 수 있도록 해야 함
+구글검색 엔진 최적화 가이드...를 한 번 쯤 찾아봐야한다
+
+1. Title 태그에 검색어가 있는 경우
+	: 우선시
+	자신의 사이트를 대표하는 검색어를ㄹ Title태그에 잘 달아놔야 한다.
+2. Meta Tag를 사용하는 것이 좋다
+	짧은 문장이나 짧은 단락을 더 선호
+3. URL구조 개선...bit.ly
+	특별한 컨텐츠에 도달하 수 있는 식별자가 URL이다
+	URL주소를 알아보기 좋은 형태로 만들면 검색엔진 최적화에 도움
+	정보를 직관적으로 파악하는 데도 도움이 된다
+font:태그, color는 해당 태그의 속성, 값을 부여할 때 " or ' 모두 가능
+OL : 	orderlist
+H1,2,3,폰트 크기
+ul : 순서없이
+hr : 수평선
+<a> : 앵커태그 : 하이퍼링크
+
+스타일링 : css. 해드 안에
+* : 모든 것, Body : 바디만 등등 영역지정
+
+자바스크립트 : 버튼 생성하고 동작하려면 이벤트 연결할 때 . 헤드안에서 함수 정의
+
+-->
+
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<title>First HTML!!</title>
+<style>
+	/* 선택자 지정 */
+	body{
+	/* 속성이름 : 속성값 지정 */
+	text-align : center;
+	}
+	ol, ul{
+		display : inline-block;
+	}
+	
+</style>
+
+<script>
+	function push(){
+		aler("버튼 눌러졌어요~~~~>u<");
+	
+	}
+</script>
+</head>
+<body>
+<h1><font color='green'> HELLO HTML5 </font></h1>
+<h2><font color='red'> HELLO HTML5 </font></h2>
+<h3><font color='blue'> HELLO HTML5 </font></h3>
+<h4><font color='black'> HELLO HTML5 </font></h4>
+<hr>
+<button onclick="push()">눌러주세요</button>
+<hr>
+<ol>
+	<li><a href="http://java.sun.com">JAVA</a></li>
+	<li>JDBC</li>
+	<li>HTML5</li>
+	<li>CSS3</li>
+</ol>
+<hr>
+<ul>
+	<li>JAVA</li>
+	<li>JDBC</li>
+	<li>HTML5</li>
+	<li>CSS3</li>
+</ul>
+</body>
+</html>

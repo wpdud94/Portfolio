@@ -1,0 +1,50 @@
+<!-- 
+자바를 다뤘봤다면 객체를 생성할 때 클래스 없이는 불가능하다.
+즉 클래스를 기반으로 해서 객체가 생성됨
+하지만, 자바스크립트에서는 클래스가 존재하지 않는다.
+
+자바스크립트 Object
+Object : 속성과 메소드를 가진 구현체. Key(속성)와 Value(속성값)가 연결된 집합체
+
+객체의 유형
+1. 리터럴객체, JSON 객체(제일 중요) : DB로부터 받아오는 게 일반적이므로 속성만 보통 받으나 메소드를 추가할 수 있다.
+2. 생성자객체 : 자바랑 흡사
+3. 함수객체
+4. 배열객체 : key값 없고, 다른 타입의 값 저장 가능
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript 객체 만드는 유형 정리</title>
+<script type="text/javascript">
+//1. JSON 객체
+var p1 = {name:"홍길동",phone:"010-1111-2222", age:20};
+console.log(p1);
+
+//2. 생성자 함수를 이용해서 객체생성
+var p2 = new Object(); //생성자함수는 일반함수와 구분하기 위해서 Object, 대문자로 시작
+p2.name="홍길동"; // 이 부분이 실행되면서 빈 객체에 값이 할당됨.
+p2.phone="010-1111-2222";
+p2.age=20;
+console.log(p2);
+
+//3. 함수를 이용한 객체 생성
+p2.getInfo = function() {
+	return this.name+"님의 나이는 "+this.age
+}
+
+console.log(p2.getInfo());
+
+//4. 배열 객체
+var p3 = [1, 22, 'Hello']; // 원래는 타입에 맞게 할당해야 하나 짬뽕되도 됨.
+console.log(p3);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

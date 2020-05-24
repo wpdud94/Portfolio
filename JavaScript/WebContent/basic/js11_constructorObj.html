@@ -1,0 +1,57 @@
+<!-- 
+해보기
+Student 생성자 객체 선언,
+이름, 자바score, 파이썬score, html5,score .... 속성
+함수1(score총합) 
+함수2(평균)
+함수3(정보들을 출력) : 
+이름, 자바, 파이썬, html 총합   평균
+ㄴㄴ  ㄴㄴㄴ  ㄴㄴㄴ   ㄴㄴㄴ  ㄴㄴㄴ ㄴㄴㄴ
+
+총 3명으로 생성
+출력은 html body 부분 안에다가 알아서
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>생성자함수 이용한 객체 생성::self</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+function Student(sname, javas, pythons, html5s){
+	this.sname=sname;
+	this.javas=javas;
+	this.pythons=pythons;
+	this.html5s=html5s;
+	
+	this.sumOfScore=function() {
+		return this.javas+this.pythons+this.html5s;
+	}
+	this.aveOfScore=function() {
+		return this.sumOfScore()/3;
+	}
+	//es6에서 새로 도입 :: 1) `(grave accent: 태그와 변수 사이 아무 연산없이 할 수 있도록) 2) arrow function(나중에... vue.js) 3) let(로컬), const(var 대신 상수값)
+	this.getDetails=function(){
+		document.write('<table border ="2"><tr><th>이름</th><th>자바</th><th>파이썬</th><th>html5</th><th>총점</th><th>평균</th></tr>');
+		document.write(`<tr><td>${this.sname}</td><td>${this.javas}</td><td>${this.pythons}</td><td>${this.html5s}</td><td>${this.sumOfScore()}</td><td>${this.aveOfScore()}</td></tr>`);
+	}
+}
+
+$(document).ready(function() {
+	$('h2').text('Student Score Info');
+	
+	var s1 = new Student("갑", 80,70,90);
+	var s2 = new Student("을", 70,50,80);
+	var s3 = new Student("병", 90,90,90);
+	
+	s1.getDetails();
+	s2.getDetails();
+	s3.getDetails();
+});
+
+</script>
+</head>
+<body>
+</body>
+</html>

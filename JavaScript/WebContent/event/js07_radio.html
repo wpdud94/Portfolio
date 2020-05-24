@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>radio</title>
+<script type="text/javascript">
+	function reserve() {
+		var ma = document.moviefrm.movie; // object RadioNodeList = 배열
+		//alert(ma.length); // 5나오면 배열
+		//alert(ma[0].value);
+		//alert(ma[3].checked); //선택했다는 표시!! check한 것은 checked한 필드로 가져감.
+		var flag= false;
+		for(var i=0;i<ma.length;i++){
+			if(ma[i].checked){
+				alert(ma[i].value+" 영화 예약 완료");
+				ma[i].checked = false;	
+				flag=true;
+				break;
+			}
+		}
+		if(!flag) alert("하나의 영화는 선택하세요.")
+	}
+</script>
+</head>
+<body>
+	<form action="" name="moviefrm">
+		<input type="radio" name="movie" value="그을린 사랑">그을린 사랑<br/>
+		<input type="radio" name="movie" value="타임 패러독스">타임 패러독스<br/>
+		<input type="radio" name="movie" value="셔터 아일랜드">셔터 아일랜드<br/>
+		<input type="radio" name="movie" value="식스센스">식스센스<br/>
+		<input type="radio" name="movie" value="인비저블 게스트">인비저블 게스트<br/>
+		<input type="button" value="Reservation" onclick="reserve()">
+	</form>
+</body>
+</html>

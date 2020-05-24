@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 선언하는 2가지 방법:: 익명함수|선언적 함수 선언</title>
+<script type="text/javascript">
+	//1. 익명함수 재정의 : 
+	/* 오버라이딩해서 제일 마지막이 나옴 */
+	/*이름이 없기 때문에 반드시 변수에 할당해야 함*/
+	/* 변수로 호출. 함수형 객체 */
+	/* 익명함수 호출 시 정의&호출 순서 중요 : 순서대로 함*/
+	/* var func = function() {alert("func A..");}
+	var func = function() {alert("func B..");}
+	func(); */
+	
+	//2. 선언적 함수 재정의:
+	/* Hoisting 적용받음 */
+	/* func();
+	function func(){alert("func A..")}
+	function func(){alert("func B..")} */
+	
+	//3. 익명함수, 선언적 함수 같이 썼을 때 실행순서
+	/* 선언적 함수가 실행순서가 더 빠름 */
+	var func = function() {alert("func A..");}
+	function func(){alert("func B..")}
+	
+	func();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

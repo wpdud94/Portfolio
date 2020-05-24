@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CheckBox</title>
+<script type="text/javascript">
+	function choiceBox() {
+		var ca = document.checkfrm.boy;
+		//alert(ca.length); checked = 도 선택
+		/*
+		선택한 이상현들을 한 alert창으로 출력
+		*/
+		var list = "";
+		for(var i=0;i<ca.length;i++){
+			if(ca[i].checked){
+				list += ca[i].value+" ";
+				flag=true;
+			}
+			ca[i].checked = false;
+		}
+		if(list==""){
+			alert("영화 하나는 선택해주세요")
+		}else{
+			alert("당신의 이상형은 "+list+"입니다.")
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<form action="" name="checkfrm">
+	<strong>이상형을 선택하세요(복수 응답 가능)</strong><br><br/>
+		<input type="checkbox" name="boy" value="김선생님">김선생님<br>
+		<input type="checkbox" name="boy" value="이태오">이태오<br>
+		<input type="checkbox" name="boy" value="조정석">조정석<br>
+		<input type="checkbox" name="boy" value="공유">공유<br>
+		<input type="checkbox" name="boy" value="이동욱">이동욱<br>
+		<br>
+		<input type="button" value="선택" onclick="choiceBox()">
+	</form>
+</body>
+</html>

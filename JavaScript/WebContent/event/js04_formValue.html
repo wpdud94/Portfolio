@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FormValue</title>
+<script type="text/javascript">
+
+	function showData() {
+		//닉네임으로 입력한 값을 변수에 받아온다.
+		var nickName = document.loginfrm.nick.value; //nick까지 계층까지 내려가서 form 객체를 받아 그 value를 가져온다.
+		alert(nickName+", Hello")
+		
+		document.loginfrm.nick.value = ""; //clear 작업
+		
+		document.loginfrm.hobby.focus(); //포커스를 해당 계층으로
+	}
+	function showHobby() {
+		var hobby = document.loginfrm.hobby.value;
+		alert(hobby);
+		document.loginfrm.hobby.value = "";
+		document.loginfrm.nick.focus()
+		;
+	}
+
+</script>
+</head>
+<body>
+	<form name="loginfrm">
+	닉네임 <input type="text" name="nick">	
+	<input type="button" value="닉네임보기" onclick="showData()"><br/>
+	취미 <input type="text" name="hobby">
+	<input type="button" value="취미보기" onclick="showHobby()">
+	</form>
+</body>
+</html>

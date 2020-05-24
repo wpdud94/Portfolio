@@ -1,0 +1,48 @@
+<!-- 
+정해진 영역에서 벗어날 정도로 넘칠 때 : 이미지 등 넘칠 때 생각하기~
+넘어간 경우 안 보여줄 때
+scroll bar
+
+box vi : box 아래에 vi
+vi : visible
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box{
+		width: 150px;
+		height: 150px;
+		background: #cccccc;
+		float: left;
+		margin-right: 10px;
+	}
+	.vi{overflow: visible;}
+	.hi{overflow: hidden;}
+	.sc{overflow: scroll;}
+	.au{overflow: auto;}
+
+</style>
+</head>
+<body>
+	<div class="box vi">
+		<h3>visible</h3>
+		<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+	</div>
+	<div class="box hi">
+		<h3>Hidden</h3>
+		<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+	</div>
+	
+	<div class="box sc">
+		<h3>Scroll</h3>
+		<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+	</div>
+	<div class="box au">
+		<h3>AUTO</h3>
+		<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+	</div>
+</body>
+</html>

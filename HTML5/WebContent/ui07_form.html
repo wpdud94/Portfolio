@@ -1,0 +1,38 @@
+<!-- 
+ID를 입력받을 수 있는 From
+Password form, 노출 안 되게
+address form
+전송 버튼 : for server side로 요청 실행
+
+전달 시 form의 이름으로 전달됨. 입력양식에 form 이름과 양식 지정 : name
+각 form은 vo field에 해당. 최종적인 DB의 member에 감.
+form, vo field, DB col의 이름이 같으면 편함
+name ~ field name
+
+Input type : summit과 button
+button : javascript로 연결해주지 않으면 아무것도 아님
+summit : 입력받은 모든 데이터(주소창에 뜸)를 program side. 어디로? form 태그에 (필수 속성) 지정한 server에.
+도시락 보냈는데 아무것도 없으니까 status 음수값을 보내 404화면 나옴
+value ~ 값
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form tag</title>
+</head>
+<body>
+	<h2>Basic Form Tag</h2>
+	<hr/>
+	<form action="#">
+		<p>아이디   <input type = "text" name = "id"></p>
+		<p>비밀번호 <input type = "password" name = "pass"> </p>
+		<p>주소   <input type = "text" name = "addr"></p>
+		<input type="submit" value="전송">
+		<input type="button" value="버튼">
+		<button>버튼2</button>
+	</form>
+	<hr/>
+</body>
+</html>

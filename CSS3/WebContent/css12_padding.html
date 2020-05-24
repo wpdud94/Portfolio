@@ -1,0 +1,62 @@
+<!-- 
+
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 
+	1. table의 경계선을 지정...실선...그린색
+	2. 글씨 중앙정렬
+	3. 테이블을 옆으로 나란히 배치
+	4. 여백(margin)을 상하좌우 30px
+	5. td안에 있는 이미지 여백은 20px
+	6. 각각의 테이블은 배경색을 서로 다르게 지정
+ */
+ 	#wrap{
+ 		width: 90%;
+ 		text-align: center;
+ 		
+ 		border: 2px solid black;
+ 	}
+ 	table{
+ 		border: 1px solid green;
+ 		text-align: center;
+ 		margin: 30px 30px;
+ 		float: left;
+ 		border-collapse: collapse;
+ 	}
+ 	table.rara01{
+ 		background: yellow;
+ 	}
+	table.rara02{
+		background: blue;
+	}
+	td{
+		border: 1px solid purple;
+		padding: 20px 20px;
+	}
+
+</style>
+</head>
+<body>
+<h2 align = "center">Margin, padding</h2>
+<div id="wrap">
+	<table class="rara01">
+		<tr>
+			<td>시구장면1</td><td><img alt="" src="img/rara.jpg"></td>
+		</tr>
+	</table>
+	<table class="rara02">
+		<tr>
+			<td>시구장면2</td><td><img alt="" src="img/rara.jpg"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

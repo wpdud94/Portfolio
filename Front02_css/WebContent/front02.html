@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Encore Theater Reservation</title>
+<style type="text/css">
+	#headers{
+		width: 450px;
+		margin: 0 auto;
+	}
+	#wrap{
+		width : 450px;
+		margin: 0 auto;
+		background: gray;
+	}
+	header{
+		font-family: Georgia;
+		font-size: 25px;
+	}
+	#subheader{
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 30px;
+	}
+	section{
+		align : center;
+	}
+	
+</style>
+</head>
+<body>
+<section id="headers">
+	<header><h1>Encore Theater</h1></header>
+	<div id="subheader">쿵푸팬더 예매</div>
+	<br/>
+	<img alt="" src="img/panda.jpg" width="390px">
+</section>
+<form action="#">
+<section id="wrap">
+	<section class="sitedate">
+		<label>상영관</label><select>
+			<option value="cgv">CGV
+			<option value="lotte">롯데시네마
+			<option value="megabox">MegaBox
+		</select>
+		<label>날짜 선택</label><input type="date" name="revDate" value="mm/dd/yyyy">
+	</section>
+	<section class="time">
+		<fieldset>
+			<legend><h4>시간선택</h4></legend>
+			<input type="radio" name="time" value="08-30">08:30
+			<input type="radio" name="time" value="11-00">11:00
+			<input type="radio" name="time" value="14-20">14:20
+			<input type="radio" name="time" value="17-25">17:25
+			<input type="radio" name="time" value="20-10">20:10
+			<input type="radio" name="time" value="23-05">23:05
+		</fieldset>
+	</section>
+	<section class="fee">
+		<label>요금</label>&nbsp;<p class="fee line">W9,000</p>
+		<p class="fee bottomline">W5,000</p>
+	</section>
+	<section class="numOfPeople">
+		<label>인원</label>&nbsp;<input type="number" name="numOfPeople" value="0">
+	</section>
+	<section class="sumOfFee">
+		<label>금액</label>&nbsp;<input type="number" name="sumOfFee" value="0">
+	</section>
+	<section class="options">
+		<input type="checkbox" name="option"><label>옵션</label>
+			<fieldset>
+				<input type="checkbox" name="option"><label>팝콘</label>
+				<input type="checkbox" name="option"><label>콜라</label>
+			</fieldset>
+	</section>
+</section>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자</title>
+<script type="text/javascript">
+/* 
+window.onload
+html 문서에 포함된 모든 콘텐츠가 로드된 후에 실행하는 함수
+동일한 문서에는 오직 하나만 존재
+*/
+/* 
+ready 함수
+좀 더 안전하고 유연한 함수
+*/
+window.onload = function () {
+
+	var list = "";
+	alert(list);
+	// 복합연산자 사용
+	list +='<ul>';
+	list +='<li>Hello</li>';
+	list +='<il>JavaScript!!!</i>';
+	list +='<ul>';
+	
+	// li 변수 안 내용을 웹 브라우저에 출력... body 태그아래에 붙이면 됨
+	document.body.innerHTML = list;
+
+}
+</script>
+</head>
+<body>
+	<h2>====OnLoad====</h2>
+</body>
+</html>

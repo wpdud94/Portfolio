@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* color : orange; 글씨 스타일 : 알아서*/
+	h2{
+		color : orange;
+		font-style : oblique;
+		font-weight : bold;
+		font-size : 25pt;
+	}
+/* p태그 선태자로. 글씨색깔 알아서. 폰트사이즈 25. 궁서체*/
+	p{
+		color : silver;
+		font-size : 25pt;
+		font-family : 궁서체;
+	}
+	

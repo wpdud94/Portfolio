@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>valueCheck</title>
+<script type="text/javascript">
+/*
+입력된 나이가 19세 이상이면 "성인입니다... 입장 가능" 메세지를 alert로 출력
+미만이면 "~~ 입장 불가능" 메세지를 alert로 출력
+위 작업 모두 각각의 입력박스에의 값을 지우고 커서를 다시 위치시킨다.
+만약에 빈 공간일 때는 값을 입력하지 않으면 값을 입력하라는 메세지를 듸운다. required 속성 사용 금지
+숫자 대신에 문자를 입력할 때도 처리... 나이를 숫자로 입력바랍니다. isNaN()
+*/
+	function checkAge() {
+		var age = document.agefrm.age;
+		alert(typeof age.value);
+		if(age.value=="") {
+			alert("나이를 입력해주세요...");
+		}else if(isNaN(document.agefrm.age.value)){
+			alert("나이를 숫자로 입력바랍니다.")
+		}else if(age.value>=19) { // 비교연산자를 사용할 때 숫자vs문자를비교하면 문자열을 자동으로 숫자로 변환하여 비교해준다
+			alert("성인입니다... 입장 가능");
+		}else {
+			alert("미성년자입니다... 입장 불가능");
+		}
+		age.value= "";
+		age.focus();
+	}
+</script>
+</head>
+<body>
+	<form action="" name="agefrm">
+		나이 <input type="text" name="age">
+		<input type="button" value="나이 확인" onclick="checkAge()">
+	</form>
+</body>
+</html>

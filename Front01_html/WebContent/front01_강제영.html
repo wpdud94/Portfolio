@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1{
+		color : orange;
+		text-align : center;
+		text-shadow : 5px 3px 3px black;
+	}
+	h3{
+		color : olive;
+	}
+	table{
+		margin-left:auto;
+		margin-right:auto;
+		border : "2";
+		width : 67%;
+	}
+	td{
+		text-align : right;
+		width : 50%;
+	}
+	p{
+		text-align : right;
+	}
+	hr{
+		border : solid 3px orange;
+		
+	}
+</style>
+</head>
+<body>
+<form action="#">
+<h1>Become a Member</h1>
+<hr>
+<fieldset>
+	<legend><h3>Registration Information</h3></legend>
+		<table>
+			<tr>
+				<td>E-mail:</td> 
+				<td><input type="text" name="email" 
+				style="vertical-align:center;width:350px;border:solid 2px red;"> 
+				</td>
+			</tr>
+			<tr>
+				<td>Password:  </td>
+				<td><input type="password" name="pass" 
+				style="vertical-align:center;width:350px; border:solid 2px red;" 
+				placeholder = " At least 6 letters or numbers">
+				</td>
+			</tr>
+			<tr>
+				<td>Verify Password: </td>
+				<td><input type="text" name="verifyPass" 
+				style="vertical-align:center;width:350px;border:solid 2px red;">
+				</td>
+			</tr>
+		</table>
+</fieldset>
+
+<fieldset>
+	<legend><h3>Member Information</h3></legend>
+		<table>
+			<tr>
+				<td>First Name:</td> 
+				<td><input type="text" name="fname" 
+				style="vertical-align:center;width:350px;border:solid 2px red;"> 
+				</td>
+			</tr>
+			<tr>
+				<td>Last Name:  </td>
+				<td><input type="text" name="lname" 
+				style="vertical-align:center;width:350px; border:solid 2px red;">
+				</td>
+			</tr>
+			<tr>
+				<td>Address:  </td>
+				<td><input type="text" name="addr" 
+				style="vertical-align:center;width:350px;" >
+				</td>
+			</tr>
+			<tr>
+				<td>City:  </td>
+				<td><input type="text" name="city" 
+				style="vertical-align:center;width:350px; border:solid 2px red;" >
+				</td>
+			</tr>
+			<tr>
+				<td>State:  </td>
+				<td><input type="text" name="state" 
+				style="vertical-align:center;width:350px; border:solid 2px red;"
+				placeholder = " 2-character code">
+				</td>
+			</tr><tr>
+				<td>ZIP Code:  </td>
+				<td><input type="text" name="zipcode" 
+				style="vertical-align:center;width:350px; border:solid 2px red;"
+				placeholder = " 5 or 9 digits">
+				</td>
+			</tr>
+			</tr><tr>
+				<td>Phone Number:  </td>
+				<td><input type="text" name="phonnum" 
+				style="vertical-align:center;width:350px;"
+				placeholder = " 999-999-9999">
+				</td>
+			</tr>
+		</table>
+</fieldset>
+
+<fieldset>
+	<legend><h3>Membership Information</h3></legend>
+		<table>
+			<tr>
+				<td>Membership Type:</td> 
+				<td><select name="mType" multiple = "multiple" style="vertical-align:center;width:350px;height:21px">
+					<option value ="Junior">Junior</option>
+					<option value ="Senior">Senior</option>
+				</td>
+			</tr>
+			<tr>
+				<td>Starting Date:  </td>
+				<td><input type="text" name="sDate" 
+				style="vertical-align:center;width:350px; border:solid 2px red;" 
+				placeholder = " mm/ddd/yyyy">
+				</td>
+			</tr>
+			<tr>
+				<td style="width : 100%">Verify Tickets For Guests: </td>
+				<td><input type="text" name="verifyPass" 
+				style="vertical-align:center;width:350px;"
+				placeholder = " 2">
+				</td>
+			</tr>
+		</table>
+</fieldset>
+<fieldset>
+	<legend><h3>Membership Information</h3></legend>
+		<p><input type="submit" value ="Summit" style="vertical-align:center;width:150px; background-color : silver">   <button style="vertical-align:center;width:150px;background-color : silver">Reset Feild</button></p>
+		
+</fieldset>
+<hr/>
+<footer>
+		<p>Copyright 2020 Encore Academy.</p>
+</footer>
+</form>
+</body>
+</html>

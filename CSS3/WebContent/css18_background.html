@@ -1,0 +1,26 @@
+<!-- 
+background-position: height 부여 후 정렬해야 함
+
+background-repeat : repeat이 기본값
+background-size : %, px 혼용 가능. 순서 : width height
+그림이 여러 개일 때 ","를 통해 각각 수정 가능. 순서 : url 순서
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-image: url("img/BackgroundFront.png"), url("img/BackgroundBack.png");
+		/* background-size: 100% 200px; */
+		background-size : 100%, 100%;
+		background-position: top;
+	}
+</style>
+</head>
+<body>
+
+</body>
+</html>

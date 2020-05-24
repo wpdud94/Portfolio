@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* var를 선언하지 않으면 전역변수에 추가됨 */
+var myName=	"James";
+firstName = "Gosling";
+name="James Gosling";
+console.log(myName);
+console.log(firstName);
+console.log(name);
+
+/* 함수 안에서 var 선언하지 않아도 전역변수로 추가됨 */
+function showAge(){
+	age=90;
+	console.log(age);
+}
+showAge(); // 90
+console.log(age)//age가 로컬이면 에러 나야함.
+
+/* 
+es6문법에서는 위처럼 변수 개념이 난해해서 지역은 let... 전역은 const... 로 표기하여 구분하도록 함. 다만 현실에서는 안 그럼.
+
+*/
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

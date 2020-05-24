@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Submit</title>
+<script type="text/javascript">
+	function entrance() {
+		var flag = confirm("성인 사이트입니다. 정말 입장하시겠습니까?"); // yes, no 중 하나만 선택
+		return flag;
+	}
+
+</script>
+</head>
+<body>
+<!-- 
+html&jsp
+비슷해 보임
+공통점 : Script기반 : 태그 기반 **XML도 <==> 로직 기반 : 자바, servlet
+차이점
+1) 프로그램 여부
+HTML != 프로그램 : 인트로 페이지으로 만듦.
+JSP = 프로그램
+왜? Web Container : server side 기술 
+php, hsp, jsp
+서버에서 돌아가는 핵심적인 랭기지 = servlet
+
+개발자랑 디자이너 사이에 간극이 있어서 마이크로소프타사가 스크립트 기반 프로그램을 만들어냄. asp
+sun에서 servlet을 기반으로 jsp을 만듦.
+따라서 servlet만 알면 jsp도 알 수 있음.
+servlet을 알면 확장성, 컨테이너 기술을 알 수 있음
+
+MVC, JSP 기반 회사를 가면 안 된다.
+ -->
+	<form action="adult.jsp" onsubmit="return entrance()">
+		<input type="submit" value="성인사이트 입장"> 
+		<!-- 폼 태그 안의 모든 데이터를 들고 action 페이지로 이동 -->
+		<!-- 그래서 함수로 한 번 걸러줘야함. 단 onsubmit은 form에다가 써야한다. -->
+		<!-- 함수 호출 결과 가지고 true면 action, false면 페이지 이동을 하지 않음(action malfunc) -->
+	</form>
+</body>
+</html>
