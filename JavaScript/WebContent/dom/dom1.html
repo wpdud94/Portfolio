@@ -1,0 +1,26 @@
+<!-- Document Object Modeling
+Tree구조로 메모리에 올라간 html문서를
+조작할 대 사용
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom1</title>
+<script type="text/javascript">
+	window.onload = function(){ //body가 먼저 메모리에 올라갸아 하므로
+		//1. node(태그, 내용) 생성
+		var h1=document.createElement("h1"); //node 중 태그를 h1이름으로 만든다
+		var text=document.createTextNode("Hello DOM!!"); //내용은 TextNode() 로
+		//2. node 연결 -- 태그와 내용을 그리고 난 후 기존 태그에
+		h1.appendChild(text); // 태그와 내용이 부모 자식으로 연결
+		document.body.appendChild(h1);
+	
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

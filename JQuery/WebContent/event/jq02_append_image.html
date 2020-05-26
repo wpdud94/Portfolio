@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>append image</title>
+<style type="text/css">
+	.img{
+		border: 2px solid black;
+		width : 300px;
+		height : 300px;
+		
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	/* $('body').append('<h2>Happy Day</h2>'); // DOM구조에서 h2가 메모리에 올라감
+	$('h2').before('<h2><font color=red>오늘은 화요일</h2>'); */
+	
+	//1. 이미지 부착
+	var img1 = "<img src = '../image/1.JPG' >"; //str 안에 str 넣을 때는 1. 더블 안 싱글 2. 싱글하고 안 하면 됨
+	var img2 = "<img src = '../image/2.JPG' >";
+	var img3 = "<img src = '../image/3.JPG' >";
+	
+	var h1 = '<h1>잘나가는 여자들</h1>';
+	
+	//2. body태그에 h1, 이미지들을 부착
+	$('body').append(h1);
+	$('h1').append('<br>',img1,img2,img3);
+	$('img').addClass('img');
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM3</title>
+<script type="text/javascript">
+/* 수정하기*/
+	window.onload = function() {
+		//1.특정 태그만 수정하기 : getElementById & innerHTML
+		/* var header1 = document.getElementById("header1");
+		var header2 = document.getElementById("header2");
+		
+		header1.innerHTML = "<h2><font color=red>Using getElementById</h2>"; */
+		
+		//2. 공통된 여러 태그 수정하기 : 
+		var headers=document.getElementsByTagName("h1"); //인자값을 이름으로 하는 모든 태그를 불러온다... 배열로...
+		for(var i=0;i<headers.length;i++){
+			headers[i].innerHTML="Using getElementsByTagName()";
+		}
+		//alert(headers.length);
+		
+	}
+
+</script>
+</head>
+<body>
+	<h1 id="header1">Header - 1</h1>
+	<h1 id="header2">Header - 2</h1>
+</body>
+</html>

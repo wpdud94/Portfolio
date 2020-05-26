@@ -62,25 +62,87 @@
 	#theaterExp img{
 		position: absolute;
 		top: 172px;
-		right: 330px;
+		right: 420px;
 		width: 580px;
 		height: 250px;
 		-moz-border-radius: 22px;
 		-webkit-border-radius: 22px;
+		z-index: 5000;
 	}
 	
 	#moviExp{
 		width: 66%;
-		margin: 10px 0px 0px 30px;
-		border: 1px solid red;
+		margin: 10px 0px 0px 45px;
 	}
 		#moviExp p{
-			font: italic;
-			color: silver;
+			font-size: 15px;
+			font-style: italic;
+			color: #807A76;
+			display: inline;
+			margin: 10px 0px;
 		}
 		
-		#plot{
+		.title{
+			font-weight: bolder;
+		}
+	
+	#plot1{
+		font-size: 13px;
+		width: 33%;
+		margin: 10px 0px 0px 45px;
+	}
+	#plot2{
+		width: 300px;
+		font-size: 13px;
+		position:absolute;
+		top: 659px;
+		right: 633px;
 		
+		margin: 10px 0px 0px 10px;
+	}
+	
+	.moviepic img{
+		width: 33%;
+		height: 200px;
+		float: left;
+		margin: 20px 0px 0px 45px;
+	}
+	.movievideo{
+		width: 33%;
+		height: 300px;
+		position:absolute;
+		top: 770px;
+		right: 375px;
+		margin: 20px 0px 0px 45px;
+	}
+	
+	#aside{
+		width: 11.5%;
+		height: 900px;
+		position: absolute;
+		top: 172px;
+		right: 420px;
+		background: #E5E5E5;
+		z-index: 0;
+	}
+		#menu{
+			width: 120px;
+			height: 400px;
+			margin: 280px 50px 0px 30px;
+			padding: 10px;
+			background: linear-gradient(to top,#E5E5E5 ,#DBDBDB);
+			border-radius: 10px;
+			
+		}
+		
+		#menu h3{
+			margin-bottom: 10px;
+		}
+		#menu h4{
+			font-size: 12px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			margin-left: 15px;
 		}
 	
 
@@ -107,24 +169,8 @@
 	</p>
 	<img class="img" alt="" src="img/panda_sabu.jpg" width="60%" height="250px" >
 </div>
-<div id="moviExp">
-	<h1>쿵 푸 팬 더</h1>
-	<p>개봉 2011. 5. 26</p>
-	<p>감독 여 인 영</p>
-	<p>등급 [국내] 전체 관람가</p>
-	<div id="plot">
-		<pre><p>‘평화의 계곡’에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을 알려주어 가업을 잇게 하고 싶지만, 포의 관심사는 오로지 '쿵푸 마스터'. 가게 일은 뒷전으로 하고 쿵푸의 비법이 적힌 용문서의 전수자를 정하는 ‘무적의 5인방’ 대결을 보러 시합장을 찾은 포, 그런데 이게 웬일! 마을의 현인 우그웨이 대사부가 포를 용문서의 전수자로 점지하는 이변이 일어난다. 무적의 5인방은 물론 시푸 사부 역시 이 사태를 받아들이지 못하는 가운데, 용문서를 노리고 어둠의 감옥에서 탈출한 타이렁이 마을을 습격해오자 그를 막아야 하는 미션이 포에게 떨어지는데... 포는 쿵푸마스터로 거듭날 수 있을까? 아니... 포가 쿵푸를 할 수는 있을까? 똥배 안에 숨겨진 포스를 깨우기 위한 포의 도전이 시작된다
-		</p></pre>
-	</div>
-	<div class="movieExp pic">
-		<img alt="" src="img/panda_dum.jpg">
-	</div>
-	<div class="movieExp video">
-		<iframe width="1045" height="444" src="https://www.youtube.com/embed/XDncZq_zVNs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div>
-</div>
-<div class="aside">
-	<div class="aside menu">
+<div id="aside">
+	<div id="menu">
 		<h3>Movies</h3>
 		<h4>현재상영작</h4>
 		<h4>상영예정작</h4>
@@ -133,5 +179,25 @@
 		<h4>맥스무비 예매순위</h4>
 	</div>
 </div>
+<div id="moviExp">
+	<h1>쿵 푸 팬 더</h1><br>
+	<p class="title">개봉 &nbsp;</p><p> 2011. 5. 26</p><br><br>
+	<p class="title">감독 &nbsp;</p><p style="text-decoration: underline;">여 인 영</p><br><br>
+	<p class="title">등급 &nbsp;</p><p>[국내] 전체 관람가</p><br><br>
+</div>
+<div id="plot1">
+	<p style="display: inline">하.면.된.다 - 포.스.작.렬</p>
+	<p>‘평화의 계곡’에서 아버지의 국수 가게를 돕고 있는 팬더, 포. 아버지는 국수의 비법을 알려주어 가업을 잇게 하고 싶지만, 포의 관심사는 오로지 '쿵푸 마스터'. 가게 일은 뒷전으로 하고 쿵푸의 비법이 적힌 용문서의 전수자를 정하는 ‘무적의 5인방’ 대결을 보러 시합장을 찾은 포,</p>
+</div>
+<div id="plot2">
+	<p>에게 떨어지는데... 포는 쿵푸마스터로 거듭날 수 있을까? 아니... 포가 쿵푸를 할 수는 있을까? 똥배 안에 숨겨진 포스를 깨우기 위한 포의 도전이 시작된다</p>
+</div>
+<div class="moviepic">
+	<img alt="" src="img/panda_dum.jpg">
+</div>
+<div class="movievideo">
+	<iframe src="https://www.youtube.com/embed/XDncZq_zVNs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 </body>
 </html>

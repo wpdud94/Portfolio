@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<style type="text/css">
+*{
+		margin: 0;
+		padding: 0;
+		/* border: 1px solid red; */
+		box-sizing: border-box;
+	}
+	
+	#wrap{
+		width: 500px;
+		height: 800px;
+		margin: 0 auto;
+		border: 1px solid black;
+	}
+	#print, #button, #process, #result{
+		width: 90%;
+		margin: 0 auto;
+	}
+	
+	#print{
+		margin: 10px 20px 5px 25px;
+		height : 5%;
+		text-align: right;
+		padding-right: 5px;
+		font-size: 15px;
+	}
+	#button{
+		height: 60%;
+		padding-left: 10px;
+		border: 1px solid red;
+	}
+		/* #button button{
+			width: 20%;
+			height: 22%;
+			margin: 1%;
+			align: right;
+			font-size: 120%;
+		} */
+		#button input{
+			width: 20%;
+			height: 22%;
+			margin: 1%;
+			align: right;
+			font-size: 120%;
+			background: linear-gradient(to bottom, #F3F3F3, #E1E1E1);
+			border : 1px solid #B0B0B0;
+			border-radius: 5px;
+		}
+	
+	#process{
+		height: 8%;
+		/* border: 1px solid red; */
+	}
+		#process p{
+			margin-top: 2%;
+			height: 15%;
+			/* border: 1px solid red; */
+		}
+		#process h1{
+			font-family: 굴림체;
+			font-weight: bold;
+		}
+	
+	#resultbox{
+		height: 20%;
+		color: black;
+		overflow: scroll auto;
+	} 
+		#resultbox *{
+			width: 100%;
+			height: 1%;
+			/* border: 1px solid red; */
+			padding: 0% 0% 0% 5%;
+			font-size: 20px;
+		}
+		</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var str = "";
+	var result ="";
+	var i =1;
+	function insert(val) {
+		this.val = val;
+		
+		if(str==result){
+			str+=val; 
+			document.getElementById("print").value=str;
+		}else{
+			str += val;
+			document.getElementById("print").value=str;
+		}
+	}
+	
+	function execute() {
+		result = eval(str);
+		document.getElementById("print").value= result;
+		document.getElementById("result").innerHTML += record(i,str,result);
+		str=result;
+		i++;
+		
+	}
+	
+	function initiate() {
+		str="";
+		document.getElementById("print").value="";
+	}
+	
+	function record(i, str, result) {
+		this.i=i;
+		this.str=str;
+		this.result=result;
+		
+		return "<p>"+i+". &nbsp;&nbsp;"+str+"&nbsp;"+"="+"&nbsp;"+result+"</p><br>";
+	}
+
+	
+</script>
+</head>
+<body>
+<form action="#" name="frm" id="buttonfrm">
+	<div id="wrap">
+		<input class="printed" id="print" type="text" name="print" readonly="readonly" placeholder="0.0">
+		<div id="button">
+				<input type="button" name="b" value="7" onclick="insert(7)">
+				<input type="button" name="b8" value="8" onclick="insert(8)">
+				<input type="button" name="b9" value="9" onclick="insert(9)">
+				<input type="button" name="bp" value="+" onclick="insert('+')"><br>
+				<input type="button" name="b4" value="4" onclick="insert(4)">
+				<input type="button" name="b5" value="5" onclick="insert(5)">
+				<input type="button" name="b6" value="6" onclick="insert(6)">
+				<input type="button" name="bs" value="-" onclick="insert('-')"><br>
+				<input type="button" name="b1" value="1" onclick="insert(1)">
+				<input type="button" name="b2" value="2" onclick="insert(2)">
+				<input type="button" name="b3" value="3" onclick="insert(3)">
+				<input type="button" name="bm" value="*" onclick="insert('*')"><br>
+				<input type="button" name="b0" value="0" onclick="insert(0)">
+				<input type="button" name="init" value="CE" onclick="initiate()">
+				<input type="button" name="be" value="=" onclick="execute()">
+				<input type="button" name="bd" value="/" onclick="insertd('/')">
+		</div>
+		<div id="process">
+			<p><h1>결 과 이 력</h1></p> 
+		</div>
+		<div id="resultbox">
+			<p id="result"></p>
+		</div>
+	</div>
+</form>
+</body>
+</html>

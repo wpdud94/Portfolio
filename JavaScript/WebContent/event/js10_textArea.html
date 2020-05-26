@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TextArea</title>
+<style type="text/css">
+	#result{
+		position: absolute; 
+		top: 150px;
+		left: 20px;
+		
+		width: 150px;
+		height: 100px;
+		
+		margin: 10px;
+		border: 1px solid red;
+		
+		font-size: 0.8em; /* 80%크기 */
+	}
+</style>
+<script type="text/javascript">
+window.onload = function() {//button tag 사용 시 본문 내용이 사라지지 않게 하는 법
+	preview = document.getElementById("preview") // 전역변수화
+	preview.onclick = processText; //굉장히 많이 쓰는 표현. processText 라는 callback 함수 호출
+}
+	// TextArea에 내가 입력한 값이 줄단위로 result 영역에 출력...
+	function processText() {
+		var msg = document.getElementById("inputBox").value;
+		var arrayList=msg.split("\n");
+		var outMsg="";
+		for(var i=0;i<arrayList.length;i++){
+			outMsg += arrayList[i]+"<br/>";
+		}
+		
+		document.getElementById("result").innerHTML = outMsg;
+	}
+</script>
+</head>
+<body>
+<form action="" name="frm">
+	<textarea rows="5" cols="30" id="inputBox">
+	
+	</textarea>
+	<div>
+		<!-- input button : 자바스크립트 활용할 때 -->
+		<!-- <input type="button" onclick="buttonClick()" value="Preivew"> -->
+		<!-- button tag : 디자인적으로 활용할 때 // 기본속성이 submit이므로 type 지정 필수 -->
+		<button type="button" onclick="buttonClick()" id="preview">Preview</button>
+	</div>
+	<div id="result">
+	<!-- 함수의 결과값을 여기에 뿌린다. 그때 innerHTML 씀! -->
+	
+	</div>
+</form>
+</body>
+</html>

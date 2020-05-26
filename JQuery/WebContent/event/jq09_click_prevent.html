@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>unbind() :: 바인드된 이벤트를 해제시키는 함수</title>
+<style type="text/css">
+	.reverse{
+		background: blue;
+		color: white;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. 첫 번째 h2  태그를 클릭하면... 클릭한 부분의 내용들이 red로 변하도록 선택자와 함수를 연결...
+	/* $('h2:first').click(function() {
+		$(this).html('<font color = red>CLICK</font>');
+		alert("click() calling..."); //alert가 먼저 가동
+		//이대로 놔두면 남아있음. 한 번만 하고 끝냈으면... 이벤트 해제...$(this).unbind()
+		$(this).unbind();
+	}); */
+	//2. bind로 하기
+	$('h2:eq(0)').bind('click', function() {//위 식이랑 같음. 어차피 바인드 되어있기에
+		$(this).html('<font color = red>CLICK</font>');//클릭하면 해당 기능을 진행한다.
+		$(this).unbind(); //바인드 해제...이때 클릭이벤트 해제 
+	});
+	
+});
+</script>
+</head>
+<body>
+	<h2>오늘은 화요일입니다</h2>
+	<h2>오후 늦게 비가 온다는 예보가 있습니다</h2>
+	<h2>퇴근하실 때 비가 올 수 있습니다. 우산들 가지고 오셨나요?</h2>
+</body>
+</html>

@@ -4,74 +4,94 @@
 <meta charset="UTF-8">
 <title>Encore Theater Reservation</title>
 <style type="text/css">
-	#headers{
-		width: 450px;
-		margin: 0 auto;
+	*{
+		margin:0;
+		padder:0;
+	}
+	body{
+		margin:0 auto;
+		width:450px;
 	}
 	#wrap{
 		width : 450px;
 		margin: 0 auto;
-		background: gray;
 	}
-	header{
+	h1, h2{
 		font-family: Georgia;
-		font-size: 25px;
 	}
-	#subheader{
-		font-family: sans-serif;
-		font-weight: bold;
-		font-size: 30px;
+	#sitedate{
 	}
-	section{
-		align : center;
+		#sitedate label{
+			vertical-align: middle;
+		}
+		#sitedate select{
+			vertical-align: middle;
+		}
+		#sitedate input{
+			vertical-align: middle;
+		}
+	#fee, #numOfPeople, #sumOfFee, #options fieldset{
+		margin: 10px 0px;
 	}
-	
+		#fee p{
+			display: inline;
+		}
+		#fee .feeline{
+			text-decoration: line-through;
+		}
+		#fee .feebottomline{
+			text-decoration: underline;
+		}
+	#options{
+		margin-left: 5px;
+	}
 </style>
 </head>
 <body>
 <section id="headers">
-	<header><h1>Encore Theater</h1></header>
-	<div id="subheader">쿵푸팬더 예매</div>
-	<br/>
-	<img alt="" src="img/panda.jpg" width="390px">
+	<header><h1>Encore Theater</h1></header><br>
+	<div id="subheader"><h2>쿵푸팬더 예매</h2></div>
+	<br>
+	<img alt="" src="img/panda.jpg" width="450px">
 </section>
 <form action="#">
 <section id="wrap">
-	<section class="sitedate">
-		<label>상영관</label><select>
+	<section id="sitedate">
+		<label>상영관 </label><select name="site">
 			<option value="cgv">CGV
 			<option value="lotte">롯데시네마
 			<option value="megabox">MegaBox
 		</select>
-		<label>날짜 선택</label><input type="date" name="revDate" value="mm/dd/yyyy">
+		<label>날짜 선택 </label><input type="date" name="revDate" placeholder= "mm-dd-yyyy">
 	</section>
-	<section class="time">
+	<section id="time">
 		<fieldset>
 			<legend><h4>시간선택</h4></legend>
-			<input type="radio" name="time" value="08-30">08:30
-			<input type="radio" name="time" value="11-00">11:00
-			<input type="radio" name="time" value="14-20">14:20
-			<input type="radio" name="time" value="17-25">17:25
-			<input type="radio" name="time" value="20-10">20:10
-			<input type="radio" name="time" value="23-05">23:05
+			<input type="radio" name="time" value="08-30"> 08:30&nbsp;
+			<input type="radio" name="time" value="11-00"> 11:00&nbsp;
+			<input type="radio" name="time" value="14-20"> 14:20&nbsp;
+			<input type="radio" name="time" value="17-25"> 17:25&nbsp;
+			<input type="radio" name="time" value="20-10"> 20:10&nbsp;
+			<input type="radio" name="time" value="23-05"> 23:05
 		</fieldset>
 	</section>
-	<section class="fee">
-		<label>요금</label>&nbsp;<p class="fee line">W9,000</p>
-		<p class="fee bottomline">W5,000</p>
+	<section id="fee">
+		<label>요금</label>&nbsp;<p class="feeline">W9,000</p>
+		<p class="feebottomline">W5,000</p>
 	</section>
-	<section class="numOfPeople">
+	<section id="numOfPeople">
 		<label>인원</label>&nbsp;<input type="number" name="numOfPeople" value="0">
 	</section>
-	<section class="sumOfFee">
+	<section id="sumOfFee">
 		<label>금액</label>&nbsp;<input type="number" name="sumOfFee" value="0">
 	</section>
-	<section class="options">
+	<section id="options">
 		<input type="checkbox" name="option"><label>옵션</label>
 			<fieldset>
 				<input type="checkbox" name="option"><label>팝콘</label>
 				<input type="checkbox" name="option"><label>콜라</label>
 			</fieldset>
+			<br>
 	</section>
 </section>
 </form>
