@@ -1,0 +1,70 @@
+<!-- 
+event.preventDefault();
+$(this).next() 
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sildeToggle()</title>
+<style type="text/css">
+	/* 위치를 똑같이 :: position absolute */
+	.image{
+		position: absolute;
+		top:30px;
+		left:30px;
+	}
+	
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	/* 과정 직접해보기 */
+	//1. 페이지가 로드되자마자 모든 이미지를 숨긴다.
+	$('.image').hide();
+	//2. 첫 번째 이미지가 보여지도록... 서서히
+	$('.image:eq(0)').fadeIn(1500);
+	//3. 보이는 이미지를 클릭할 때마다 다음번 이미지가 보여지도록... 슬라이딩 효과로...
+	$('.image').click(function(event) {
+		event.preventDefault(); // a태그의 가장 기본적인 이밴트를 해제
+		//$(this).next().fadeIn(1500); // 마지막에서 다시 처음으로~~
+		// alert($(this).next().length); // 있으면 1이고 없으면 0임
+		// 0과 1이면 사망 연산자 자주 씀
+		// ? 앞이 트루면 앞, 펄스면 뒤
+		var next = $(this).next().length?$(this).next():$('.image:first');
+		/*
+		$(this).fadeOut(1500);
+		next.fadeIn(1500); */
+		
+		/* 위 효과를 다 가진 게 토글 */
+		$(this).slideToggle(1500);
+		next.slideToggle(1500);
+	})
+});
+</script>
+</head>
+<body>
+	<a class="image" href="http://jquery.com">
+		<img alt="" src="../image/1.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img alt="" src="../image/2.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img alt="" src="../image/3.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img alt="" src="../image/4.JPG" width="300" height="370">
+	</a>
+	<a class="image">
+		<img alt="" src="../image/5.JPG" width="300" height="370">
+	</a>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+<!-- 
+ next() 함수
+ w3school : jQuery Tutorial : Traversing 참고
+ DOM tree 구조... 현재 태그를 기점으로 부모,자식,형제 태그를 선택 가능
+ 
+ .parent() : 해당 부모
+ .children() : 해당 자식
+ .find() : 자식 중
+ .siblings() : 같은 수준, 형제들을 모두 가져옴
+ .next() : 형제
+ 
+  -->
+  
+  <!-- 
+  속성 건드리기
+ .attr(속성이름, 속성값) : 수정 시 속성값에 넣고, 그냥 속성이름과 = 하면 가져오기
+  
+   -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Traversing</title>
+<style type="text/css">
+	table tr td{
+		border: 2px solid black;
+		margin: 10px;
+		width: 80px;
+		height: 90px;
+	}
+	.small img{
+		border: none;
+		margin: 10px;
+		width: 80px;	
+		height: 90px;
+	}
+	.large img{
+		width: 450px;
+	}
+	.hover{
+		background: gold; 
+		color: black;
+	}
+	.p{
+		font-size: 12px ;
+		font-weight: bold;
+		color: red;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. 마우스가 작은 이미지 영역 안에 들어가면... hover 효과 나타나도록 선택자와 함수 연결
+	//2. 선택한 이미지(속성)을 큰 데 넣기
+	$('.small').hover(function() {
+		//mouseenter
+		$(this).parent().addClass('hover'); // a태그에 주면 이상함.
+		//마우스가 진입한 이미지의 이름(img태그의 src속성값 or a태그의 href속성값) 받기
+		var imgat = $(this).attr('href');
+		//.large로 보내기
+		$('.large').children().fadeOut(1500);
+		$('.large').children().attr('src',imgat);
+		$('.large').children().fadeIn(1500);
+	}, function() {
+		//mouseleave
+		$(this).parent().removeClass('hover');
+	});//hover
+	
+	// td태그 안에서 p태그를 찾아서... css()를 적용... td, find().css()
+	// fontsize 12, bold, red
+	$('td').find('p').addClass('p');
+	
+});
+</script>
+</head>
+<body>
+<table>
+	<tr>
+		<td width="150" height= "200" align="center">
+			<a href="../image/2.JPG" class="small">
+				<img alt="" src="../image/2.JPG">
+			</a>
+			<p>선글라스</p>
+		</td>
+		<td width="350" align="center" rowspan="5">
+			<a href="../image/2.JPG" class="large">
+				<img alt="" src="../image/2.JPG">
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td width="150" height= "200" align="center">
+			<a href="../image/3.JPG" class="small">
+				<img alt="" src="../image/3.JPG">
+			</a>
+			<p>반바지</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="150" height= "200" align="center">
+			<a href="../image/4.JPG" class="small">
+				<img alt="" src="../image/4.JPG">
+			</a>
+			<p>머리핀</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="150" height= "200" align="center">
+			<a href="../image/5.JPG" class="small">
+				<img alt="" src="../image/5.JPG">
+			</a>
+			<p>파마머리</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="150" height= "200" align="center">
+			<a href="../image/1.JPG" class="small">
+				<img alt="" src="../image/1.JPG">
+			</a>
+			<p>김태희</p>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Encore Theater</title>
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		width: 840px;
+		background: #F0F0F0;
+		margin: 0 auto;
+	}
+	#header, #topnavi h1, #footer{
+		margin: 0 auto;
+	}
+	#header{
+		margin: 30px 0px -10px 100px;
+		height: 60px;
+		
+	}
+		#header h1{
+			font-size: 25px;
+			
+		}
+	#topnavi{
+		width:840px;
+		height: 30px;
+		background: #2C2C2C;
+	}
+		#topnavi span{
+			display: inline-block;
+			margin: 7px 0px 0px 130px;
+			vertical-align: bottom;
+			color: #E1DCBF;
+			font-size: 12px;
+		}
+		#topnavi.menu{
+			margin: 7px 0px 0px 60px;
+		}
+		#topnavi span:hover {
+			color: white;
+		}
+	#wrap{
+		margin: 15px 0px 0px 100px;
+	}
+	
+		#intro{
+			width: 650px;
+			padding: 20px 20px 5px 20px;
+			background: #028002;
+			border-radius: 10px;
+			
+		}
+			#intro h3{
+				font-weight:normal;
+				color: #EAFCE2;
+				margin-bottom: 10px;
+			}
+			#intro p{
+				color: white;
+				opacity: 0.6;
+				font-size: 9px;
+			}
+		#video{
+			width: 260px;
+			height: 190px;
+			margin-bottom: 5px;
+			float:left;
+		}
+		#movielist{
+			margin-top: 10px;
+			margin-left: 10px;
+			float:left;
+		}
+			#movielist h1{
+				color:#797878;
+				font-size: 20px;
+			}
+			#movielist input{
+				height: 15px;
+				font-size: 8px;
+				padding: 0px 1px;
+				background: linear-gradient(to bottom, #FDFEFA,#E1E3E7);
+				border: 1px solid #D4D1D3;
+			}
+			#movielist input:hover{
+				border: 1px solid #BABABA;
+			}
+			
+	#footer{
+		width:840px;
+		height: 70px;
+		padding: 10px 0px 10px 100px;
+		clear: both;
+		background: #555555;
+	}
+		#footer div{
+			width: 110px;
+			float: left;
+			margin: 0px 100px 0px 0px;
+		}
+		#footer h3{
+			margin-bottom: 5px;
+			color: white;
+			font-size: 12px;
+		}
+		#footer p{
+			margin-top: 2px;
+			font-size: 7px;
+			text-decoration: underline;
+			color:#808080;
+		}
+			#personinfo p, #announce p{
+				margin-left: 25px;
+			}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+
+});
+</script>
+</head>
+<body>
+<div id="header">
+	<h1>Encore 극장</h1>
+</div>
+<div id="topnavi">
+	<span>최신 DVD</span>
+	<span style="margin: 7px 0px 0px 60px;">DVD 목록</span>
+	<span style="margin: 7px 0px 0px 60px;">찜 리스트</span>
+</div>
+<div id="wrap">
+	<div id="intro">
+		<h3>무공해 힐링 시네마</h3>
+		<p>무공해 힐링 시네마는 새로운 개념의 영화장르의 한 가지를 말하는 것입니다. 지친 영혼을 위한 휴식을 주는 영화나, 마음을 정화시키고 자유하는 힘을 가진 영화들...</p>
+	</div>
+	<span id="video">
+		<video src="./07_media_img/BigBuck.theora.ogv" width="260" height="190" controls="controls"></video>
+	</span>
+	<div id="movielist">
+		<table>
+			<tr>
+				<td><h1>쿵푸팬더</h1></td><td><h1>어벤져스</h1></td><td><h1>빅벅</h1></td>
+			</tr>
+			<tr>
+				<td><img alt="" src="./07_media_img/movie_image2.jpg" width="90" height="100"></td>
+				<td><img alt="" src="./07_media_img/TheAvengers2012Poster.jpg" width="90" height="100"></td>
+				<td><img alt="" src="./07_media_img/BigBuck.jpg" width="90" height="100"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="미리 보기"> <input type="button" value="찜하기"></td>
+				<td><input type="button" value="미리 보기"> <input type="button" value="찜하기"></td>
+				<td><input type="button" value="미리 보기"> <input type="button" value="찜하기"></td>	
+			</tr>
+		</table>
+	</div>
+</div>
+<div id="footer">
+	<div id="about">
+		<h3>About</h3>
+		<p>서울 남부터미널 엔코아아카데미</p>
+		<p>encore@academy.com</p>
+	</div>
+	<div id="personinfo" style="margin: 0px 110px 0px 0px;">
+		<h3>개인정보 취급 방침</h3>
+		<p>개요</p>
+		<p>문의처</p>
+	</div>
+	<div id="announce">
+		<h3>공지사항</h3>
+		<p>오시는 길</p>
+		<p>오류 시 문의사항</p>
+	</div>
+</div>
+</body>
+</html>

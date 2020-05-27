@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AddClass()::</title>
+<!-- 
+HTML과 CSS 코드를 분리
+jQuery에서 스타일적 요소를 없앰
+ -->
+<style type="text/css">
+	.totalView{color: orange;}
+	.divP{color: red;}
+	.pFirst{background: gray;}
+	.paragraph{border: 1px solid green;}
+	.statement{border: 1px solid blue;}
+	.item{color: red;}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//h1, p태그를 한 번에 선택자로 지정... 열거형
+	$('h1, p').addClass('totalView');
+	
+	//div태그의 p태그 지정... color=red
+	$('div p').addClass('divP');
+	
+	//3개의 p태그 중에서 첫 번째 p태그를 선택자로 지정... 배경색 = gray
+	//1. $('p:first').css('background','gray');
+	//2. $('p').first().css('background','gray');
+	$('p:eq(0)').addClass('pFirst');
+	// 마지막 p태그
+	//$('p').last().css('background','yellow');
+	//s$('p:eq(-1)').css('background','yellow');
+	
+	//id=paragraph인 p태그 선택자로 지정
+	$('p#paragraph').addClass('paragraph');
+	//$('p #paragraph').css('border','1px solid green'); : p태그의 후손 중 아이디가 paragraph인 태그를 선택자로 지정
+	$('p.statement').addClass('statement');
+	
+	//$('.item').css('color','red');
+	$('p.item').addClass('item');
+	
+});
+</script>
+</head>
+<body>
+<h1>What is jQuery?</h1>
+<div>
+	<p>jQuery is a fast, small, and feature-rich JavaScript library. </p>
+	<p id="paragraph">It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.</p>
+	<p class="statement">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>	
+	<p class="statement item">With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+</div>
+</body>
+</html>

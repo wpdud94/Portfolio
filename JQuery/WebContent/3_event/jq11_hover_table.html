@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>template</title>
+<style type="text/css">
+	table{
+		border: 3px solid magenta;
+		width: 550px;
+	}
+	
+	tr, th, td{
+		text-align: center;
+		border: 1px dotted blue;
+		font-size: 1.2em;
+	}
+	
+	/* hover 효과를 위한 css */
+	.hover{
+		background: #00f;
+		color: #fff;
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. 마우스를 갖다 대면 hover, thead 제외
+	$('tbody>tr').hover(function() {
+		/* $(this).addClass('hover'); */
+		//현재 이벤트가 적용된 tr 중에서($this) td라는 태그를 발견하면 addClass()...find()
+		$(this).find('td').addClass('hover');
+	}, function() {
+		/* $(this).removeClass('hover'); */
+		$(this).find('td').removeClass('hover');
+	});
+});
+</script>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>이름</th><th>직업</th><th>주소</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>김복동</td><td>배우</td><td>서초구</td>
+		</tr>
+		<tr>
+			<td>엄복동</td><td>자전거선수</td><td>강북구</td>
+		</tr>
+		<tr>
+			<td>이복동</td><td>국회의원</td><td>여의도</td>
+		</tr>
+		<tr>
+			<td>박복동</td><td>무역회사원</td><td>성동구</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
