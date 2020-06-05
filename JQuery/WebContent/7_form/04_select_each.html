@@ -1,0 +1,46 @@
+<!-- 
+each(function(index, item)
+.remove()
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Each()</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#addOptionBtn').one('click',function() {
+		var arr = ['하경','재은','해경','채은','미경','연희','소희'];
+		//1. each() 사용해서 배열 안에 친구들의 이름을 select 밑에 붙여라... select>option
+		/* $(arr).each(function(index) {
+			var option = '<option value='+arr[index]+'>'+arr[index]+'</option>';
+			$('#friend').append(option);
+		}); */
+		
+		//중첩 추가 안 되도록
+		//1). $(this).unbind();
+		//2).  one.('click', fun{}) -- 이 패턴이 최종적인 each()형태 
+		$(arr).each(function(index, item) {//item =arr[index]
+			var option = '<option value='+item+'>'+item+'</option>';
+			$('#friend').append(option);
+		});
+		
+	});
+	//3. 생성된 폼을 제거... remove()
+	$('#deleteOptionBtn').one('click', function() {
+		$('#friend>option').remove();
+	});
+});
+</script>
+</head>
+<body>
+	<input type="button" value="옵션 생성" id="addOptionBtn">
+	<input type="button" value="옵션 삭제" id="deleteOptionBtn">
+	<select id="friend"></select>
+</body>
+</html>

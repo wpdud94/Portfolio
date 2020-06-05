@@ -1,0 +1,61 @@
+<!-- 
+제일 중요한 것 : 선택자가 무엇이고, 어떤 함수를 적용했느냐? // 선택자는 변경하지 아니함
+
+문법 : 어떤 구조로 이루어져 있는가?
+1) viewport : 반응형
+2) jquery css
+themes : 사이트에 themes 칸 > 갤러리 > base
+bs처럼 css를 미리 만들어 놓음... 테마 입히는 느낌
+디폴트 : base
+3) jquery lib
+4) jquery ui lib
+
+이런 식으로 하나가 어떻게 구성됐는지 알아보고 나머지는 구글링
+그리고 나서 api를 봄
+ -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Effects - toggleClass Demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  .toggler { width: 500px; height: 200px; position: relative; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect {position: relative;  width: 240px;  padding: 1em; letter-spacing: 0; font-size: 1.2em; border: 1px solid #000; background: #eee; color: #333; }
+  .newClass { text-indent: 40px; letter-spacing: .4em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.6em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#button" ).on( "click", function() {
+      $( "#effect" ).toggleClass( "newClass", 1000, callback );
+    });//on
+    
+    function callback() {
+		setTimeout(function() {
+			// 토글효과 진행되면서 2초 뒤에 어떤 일? class를 먹이거나 빼거나
+			$('#effect').removeClass('newClass');
+		}, 2000)
+	}
+  } );
+  </script>
+</head>
+<body>
+ 
+<div class="toggler">
+  <div id="effect" class="newClass ui-corner-all">
+      울릉도 동남쪽 뱃길따라 200리
+      외로운 섬 하나 새들의 고향 
+  </div>
+</div>
+ 
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+ 
+ 
+</body>
+</html>

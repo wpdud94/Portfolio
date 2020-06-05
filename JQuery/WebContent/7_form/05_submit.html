@@ -1,0 +1,40 @@
+<!-- 
+Form으로 전송한 값... 서버서 받아서 처리하기
+.submit() : 선택자를 폼으로 지정해야... 폼의 값들을 다 가지고 나르니까... onsubmit속성과 같다
+form선택자 지정 방법
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>submit</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#memberFrm').submit(function() { // onsubmit 속성과 같다. 선택자를 form으로 지정해야 함.
+		//1. 폼 값 받는다
+		var id = $('#userId').val();
+		var name = $('input[name=userName]').val();
+		var addr = $(':text[name=userAddr]').val();
+		//alert(id+','+ name+','+ addr);
+		
+		//2. confirm창으로 연결
+		return confirm(name+'님의 정보를 서버로 전송할까요?');
+	});
+});
+</script>
+</head>
+<body>
+<h2>Form으로 전송한 값... 서버서 받아서 처리하기</h2>
+<form action="05_result.jsp" method="get" id="memberFrm">
+	아이디: <input type="text" name="userId" id="userId"><br><br>
+	이 름: <input type="text" name="userName" id="userName"><br><br>
+	주 소: <input type="text" name="userAddr" id="userAddr"><br><br>
+	<input type="submit" value="Datasend">
+</form>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!-- 
+[bs : getStarted]
+# width=device-width
+bs에는 모든 meta태그에 viewport 장착
+가로를 기계 스크른 너비로 조정한다는 의미.
+기본은 모바일
+
+# initial-scale=1
+처음 페이지 로딩할 때 확대, 축소되지 않고 원래 크기를 적용
+화면을 축소하면 반응한다
+0은 반대값
+bs 사용 시 무조건 간다고 보면 됨
+
+# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+상황에 맡게 적용할 수 있음
+중요 기능들은 알 필요가 있음
+
+# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+jQuery 포함
+- jQuery를 가지고 bs를 만듦
+- jQuery 라이브러리를 먼저  include 해야 함(중요)
+
+# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+# jumbotron w3예제 참고
+- 이 영역을 드라마틱하게 확대하여 보여준다
+- 다른 영역에도 class = jumbotron 하면 적용됨
+
+# container
+조금 있다가
+
+# grid 방식 : 화면 분할 방식
+<div class="row"> 
+<div class="col-sm-4">
+- row = 줄, col = 칸, sm = small 
+- 4 = 12칸(기본)을 4로 하겠다. == 3등분 
+
+- bs에는 grid 문법이 있다
+- 1줄 12칸 구성을 기본으로 한다
+- 3등분이 목적이라면, 1줄을 4로 나누면 됨... col-sm-4
+- 등분의 중간을 비워두거나, 가장자리를 비워둔다
+
+sm??
+- 디바이스크기 오름차순 : 모바일 / 테블릿 / 노트북 / pc /
+(너비 기준)
+모바일 - 768px - xs
+테블릿 - 768px - sm
+노트북 - 992px - md
+데스크탑 = 1200px - lg
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  <div class="row">
+  	<!-- 2등분하기 -->
+  	<div class="col-lg-6">
+  		<h3>Column 1</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  	</div>
+  	<div class="col-lg-6">
+  		<h3>Column 2</h3>
+    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+    	<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+  	</div>
+    <!-- <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div> -->
+  </div>
+</div>
+
+</body>
+</html>

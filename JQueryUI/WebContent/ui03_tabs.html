@@ -1,0 +1,43 @@
+<!-- 
+[tab]
+# 선택자가 무엇인지... 함수가 무엇인지...
+- 전체가 선택자로 지정
+- 텝은 li로 연결... 누를 때마다 해당 내용이 나옴
+- DB 내용을 뿌리는 형식으로
+
+1. DB 끌어오는 방식 해보기
+- jsp로 연결
+- 프로그램이기에 DB와 연결 가능
+- 해당 페이지 내용을 가져오는 형식... 텍스트, 사진, gif 등 있는 내용 가져옴
+ -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Tabs - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#tabs" ).tabs();
+  } );
+  </script>
+</head>
+<body>
+ 
+<div id="tabs">
+  <ul>
+  	<!-- 1. -->
+    <li><a href="./tabpage/content1.jsp">Article1</a></li>
+    <li><a href="./tabpage/content2.jsp">Article2</a></li>
+    <li><a href="./tabpage/content3.jsp">Article3</a></li>
+  </ul>
+</div>
+ 
+ 
+</body>
+</html>

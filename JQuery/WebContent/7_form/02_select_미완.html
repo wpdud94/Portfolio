@@ -1,0 +1,60 @@
+<!-- 
+html() vs appned()
+html() 동적으로 붙이기
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>select</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. 버튼 클릭하면 버튼의 타이틀을 resultView 영역에다가 출력
+	$('#createBtn').click(function() {
+		//$('#resultView').html($(this).val()); // form 값 = val(), 태그 내용 = html(), text()
+		//위 방식 쓰면 중복 쓰기 안 됨... 오버라이팅하기 때문
+		//태그에 내용 붙이기 : append
+		//$('#resultView').append($(this).val()+'<br>');
+		
+		//2. html()을 이용해서 append()와 동일한 결과를 출력하도록 수정
+		var result = $('resultView').html();
+		$('#resultView').html(result+$(this).val()+'<p>');
+	});
+	
+	//3. select form에서 내가 선택한 encore 지부가 resultView영역에 계속해서 출력되도록... html()
+	$('createSel').change(function() {
+		var item = $(this).val(); // or var item = $('#createSel>option:selected').val();
+		alert($(this).val());
+		var result = $('resultView').html();
+		$('#resultView').html(result+$(this).val()+'<p>');
+	});
+	
+	
+	$('#clearBtn').click(function() {
+		$('#resultView').html('');
+	});
+});
+</script>
+</head>
+<body>
+<select id="createSel">
+	<option>Encore Academy 남부지구</option>
+	<option>Encore Academy 서초지구</option>
+	<option>Encore Academy 판교지구</option>
+	<option>Encore Academy 가산디지털지구</option>
+	<option>Encore Academy 삼성지구</option>
+</select>
+<input type="button" value="버튼 클릭 시 동적으로 문자열 생성" name="createBtn" id="createBtn">
+<input type="button" value="문자열 삭제" name="clearBtn" id="clearBtn">
+
+
+<div id="resultView">
+
+</div>
+</body>
+</html>

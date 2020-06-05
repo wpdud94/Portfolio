@@ -1,0 +1,37 @@
+<!-- 
+prop()
+원리 : 체크, 체크해제 기능
+.prop('checked', ture); 해당 인자값
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prop() 함수 : ver9에서 새로 추가된 함수</title>
+<style type="text/css">
+	input[type = button]{
+		background: linear-gradient(to top, #eee, #fff) 
+		border : 1px solid #eee;
+	}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#checkBtn').click(function() {
+		$('#mailing').prop('checked', true);
+	});
+	
+	$('#checkBtn2').click(function() {
+		$('#mailing').prop('checked', false);
+	});
+});
+</script>
+</head>
+<body>
+메일 확인 :: <input type="checkbox" name="mailing" id="mailing">
+<input type="button" value="체크" id="checkBtn">
+<input type="button" value="체크해제" id="checkBtn2">
+</body>
+</html>

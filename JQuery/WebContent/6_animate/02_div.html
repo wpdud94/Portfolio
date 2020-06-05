@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>template</title>
+<style type="text/css">
+	div{
+		position: relative;
+		width: 70px; height: 70px;
+		border: 2px solid red;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	
+	/* $('div').click(function() {
+		//1. 각각의 div을 클릭하면... 각각의 div 해당 영역이 오른쪽으로 500씩 이동...
+		$(this).animate({
+			left: '500px'
+			}, 'slow');
+	}) */
+	$('div').click(function() {
+		//1. 각각의 div을 클릭하면... 각각의 div 해당 영역이 오른쪽으로 500씩 이동...
+		var flag = false;
+		if(flag==false){
+			$(this).animate({
+				left: '500px'
+				}, 'slow');
+			flag=true;
+		}else if(flag==true){
+			$(this).animate({
+				left: '0px'
+				}, 'slow');
+			flag=false;
+		}
+	})
+	
+	// 2. 갔다가 다시 오기... hover() 이용
+	/* $('div').hover(function() {
+		$(this).animate({
+			left: '500px'
+		}, 'slow')
+	}, function() {
+		$(this).animate({
+			left: '0px'
+		}, 'slow')
+	}) */
+	
+	//3. 누적하여... 누를 때마다
+	/* $('div').click(function() {
+		$(this).animate({
+			width: '+=80',
+			height: '+=80'
+		})
+	}) */
+
+});
+</script>
+</head>
+<body>
+<div></div><div></div>
+<div></div><div></div>
+<div></div><div></div>
+</body>
+</html>

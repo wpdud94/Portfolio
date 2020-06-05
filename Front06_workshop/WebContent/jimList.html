@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Steamed List</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	#header{
+		width: 1000px;
+		height: 80px;
+		background: black;
+		margin-top: 20px;
+		padding-top: 25px;
+	}
+		#header>p{
+			color: white;
+			margine-top: 30px;
+			text-align: center;
+		}
+	#wrap{
+		width: 1000px;
+		margin: 10px 0px;
+	}
+		#wrap table{
+			
+		}
+			#wrap th{
+				border: 1px solid black;
+			}
+			#wrap #img{
+				width: 390px;
+			}
+			#wrap #serialNo, #wrap #mname{
+				width: 170px;
+			}
+			#wrap #mprice, #wrap #delete{
+				width: 120px;
+			}
+			#wrap tfoot td{
+				width: 1000px;
+				height: 50px;
+				background: orange;
+				border: 1px solid black; 
+			}
+	#footer{
+		width: 1000px;
+		padding-left: 410px;
+	}
+		#footer a{
+			display: inline-block;
+			margin-right: 5px;
+			text-align: center;
+			
+		}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	var local = localStorage; //length가 나오므로 배열임
+	alert(local.length);
+	$('tbody').html();
+});
+</script>
+</head>
+<body>
+<div id="header">
+	<p>찜 리스트</p>
+</div>
+<div id="wrap">
+	<table>
+		<thead>
+			<th id="img">이미지</th>
+			<th id="serialNo">상품번호</th>
+			<th id="mname">상품이름</th>
+			<th id="mprice">가격</th>
+			<th id="delete">삭제</th>
+		</thead>
+		<tbody>
+		</tbody>
+		<tfoot>
+			<td colspan="5"></td>
+		</tfoot>
+	</table>
+</div>
+<div id="footer">
+	<a href="#">주문하러 가기</a><a href="./JQ2_index.html">DVD 목록</a>
+</div>
+</body>
+</html>

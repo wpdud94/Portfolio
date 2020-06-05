@@ -1,0 +1,66 @@
+<!-- 
+$('image').animate({어떻게?}, 어느 속도로?); : {} 안에 속성 넣으면 됨
+# 애니메이션의 핵심 : position: relative
+# 좌우 : left: ''
+# 상하 : width: 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>template</title>
+<style type="text/css">
+	img{
+		width: 65px;
+		height: 65px;
+		background: orange;
+		position: relative;
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//왼쪽의 간격을 300px만큼 주어라 == 왼쪽에서 300px 움직여라 
+	$('img').animate({left: '300px'}, 'fast' );
+	//왼쪽의 간격을 100px만큼 주어라 == 다시 오른쪽 움직여라 
+	$('img').animate({left: '100px'  },'fast');
+	
+	//크기
+	$('img').animate({width: '50px'}, 'fast' );
+	$('img').animate({height: '100px'}, 'fast' );
+	
+	//상하
+	$('img').animate({top: '300px'}, 'fast' );
+	$('img').animate({top: '50px'}, 'fast' );
+	
+	//동시
+	$('img').animate({
+		width: '65px',
+		height: '65px'
+	}, 'fast' );
+	
+	$('img').animate({
+		left: '300px',
+		top: '300px'
+	}, 'fast' );
+	
+	//1. 5초 뒤에 앵그리버드가 사라지도록...앵그리버드 숨었더 팝업창
+	setTimeout(function() {
+		$('img').hide();
+		alert('앵그리버드 숨었다!!');
+	},5000)
+	
+	//2. 7초 뒤에 다시 나타나도록 -- 창을 연 후 7초임! 사실상 숨고 2초 뒤
+	setTimeout(function() {
+		$('img').show();
+		alert('앵그리버드 등장!!');
+	}, 7000);
+	
+});
+</script>
+</head>
+<body>
+	<img alt="" src="../image/redbird.png">
+</body>
+</html>

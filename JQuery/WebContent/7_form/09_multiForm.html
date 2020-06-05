@@ -1,0 +1,82 @@
+<!-- 
+[form 총정리]
+
+
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form 총정리</title>
+<style type="text/css">
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function() {
+	//1. submit했을 때 jquery나 js로 들렸다 가게 하기
+	$('#frm').submit(function(event) {
+		//alert('subbmit')
+		//2. id, password에 입력된 값 변수에 할당...frm초기화...focuse
+		var id = $('#id').val();
+		var pass = $('#pass').val();
+		
+		$('#id').val("").focus();
+		$('#pass').val("");
+		
+		//3. submit 이벤트가작동이 안 되도록
+		// 방법 1 : 
+		//return false;
+		// 방법 2 :
+		event.preventDefault();
+		
+		//4. checkbox에서 취미를 하나도 선택하지 않으면 alert 띄우고... 하나 이상 선택하면 alert 한 번 띄우기
+		var hobbyArr = $('input[name=hobby]:checked');
+		
+		if(hobbyArr.length==0){
+			alert('최소 하나 이상의 취미를 선태해주세요');
+		}else{
+			var data = "";
+			$(hobbyArr).each(function() {
+				data += $(this).val()+" "; //index, item을 쓰면 jquery가 아니므로 .value를 해야한다
+			});//each
+			alert('당신이 선택한 취미는'+data);
+		}//else 
+	}); //submit
+	//5. select 폼에서 선택한 번호가 resultView에 뿌려지도록
+	$('#hp').change(function() {
+		$('#resultView').html('<font color = red>'+$(this).val()+'</font>');
+	});//change
+	
+	
+});//끝
+</script>
+</head>
+<body>
+<form action="09_result.jsp" id="frm">
+	ID : <input type="text" name="id" id="id"><p></p>
+	PASSWORD: <input type="password" name="pass" id="pass"><p></p><p></p>
+	<strong>당신의 취미를 고르세요</strong><br/>
+	<input type="checkbox" name="hobby" value="Reading">Reading<br/>
+	<input type="checkbox" name="hobby" value="Walking">Walking<br/>
+	<input type="checkbox" name="hobby" value="Listening Music">Listening Music<br/>
+	<input type="checkbox" name="hobby" value="Drinking">Drinking<br/>
+<hr>
+	<select id="hp" multiple="multiple" name="ip">
+		<option>010</option>
+		<option>011</option>
+		<option>017</option>
+	</select><p></p>
+	<input type="submit" value="SEND">
+</form>
+<div id="resultView">
+</div>
+</body>
+</html>
+
+
+
+
+
+
